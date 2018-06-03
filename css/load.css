@@ -1,0 +1,25 @@
+.load {
+	width: 760px;
+}
+
+.game, .mode {
+	background-color: #e0e1e2;
+	width: 220px;
+	margin: 10px 13px 5px 13px;
+	text-align: center;
+	float: left;
+	clear: none;
+	border: 3px solid rgba(255,0,0,0.5);
+    outline: 3px solid rgba(0,226,229,0.5);
+}
+
+.game:hover, .mode:hover, {
+	background-color: #a0f4f5;
+	color: white;
+	cursor: pointer;
+}
+
+.game, .mode, .winner {
+	color: #ff8585;
+}
+

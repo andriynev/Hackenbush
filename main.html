@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hackenbush</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/ressources/images/favicon.ico" />
+        <link type="text/css" href="./css/main.css" rel="stylesheet">
+        <link type="text/css" href="./css/anaglyph_text.css" rel="stylesheet">
+        <link type="text/css" href="./css/canvas.css" rel="stylesheet">
+        <link type="text/css" href="./css/background.css" rel="stylesheet">
+        <link type="text/css" href="./css/button.css" rel="stylesheet">
+        <link type="text/css" href="./css/jquery-ui.css" rel="stylesheet">
+        <link type="text/css" href="./css/load.css" rel="stylesheet">
+        <link type="text/css" href="./css/mode.css" rel="stylesheet">
+        <link type="text/css" href="./css/play.css" rel="stylesheet">
+    </head>
+    <body> 
+        <div id="head">
+            <h1>Hackenbush</h1>
+        </div>
+        <div class="vague_bg1" id="fixedbg1" style="left: 0px;"></div>
+        <div id="main">
+            <div id="main-container">
+                <div id="main-container-canvas" class="hidden no-lock">
+                    <div id="main-left">
+                        <div class="button toolChooser hideInPlay" id="save">Save</div>
+                        <div class="button toolChooser hideInPlay" id="draw">Draw</div>
+                        <div class="button toolChooser hideInPlay" id="edit">Edit</div>
+                        <div class="button toolChooser hideInPlay" id="erase">Eraser</div>
+                        <div class="button toolChooser hideInPlay" id="eraseAll">Delete</div>
+                        <div class="button toolChooser hideInEdit" id="resetGame">Reset</div>
+                        <div class="button toolChooser" id="load">load</div>
+
+                        <div class="options hideInEdit" id="options">Option(s)
+                            <div  id="p1">
+                                <label>P1 : </label>
+                                <select  id="player1" onchange="hackenbush.controller.setPlayerColors(0)">
+                                    <option value="red" class="red">Red</option>
+                                    <option value="green" class="green">Green</option>
+                                    <option value="blue" class="blue">Blue</option>
+                                </select>
+                            </div>
+                            <div id="p2">
+                                <label>P2 : </label>
+                                <select id="player2" onchange="hackenbush.controller.setPlayerColors(1)">
+                                    <option value="blue" class="blue">Blue</option>
+                                    <option value="red" class="red">Red</option>
+                                    <option value="green" class="green">Green</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="main-center">
+                        <canvas id="canvasArea" width="800" height="600">Your browser does not support the canvas element.</canvas>
+                        <div class="winner hidden" id="win"></div>
+                        <div class="startbg hideInEdit locked">
+                            <div class="start" id="start"></div>
+                        </div>
+                    </div>
+                    <div id="main-right">
+                        <div class="button colorChooser red" id="red"> </div>
+                        <div class="button colorChooser blue" id="blue"> </div>
+                        <div class="informations hideInEdit locked"><center>Informations</center>
+                            <ul class="square">
+                                <li>Player 1 : <div id="p1Color" class="mini-button"></div></li>
+                                <li>Player 2 : <div id="p2Color" class="mini-button"></div></li>
+                                <li>Current Player : <font id="currentPlayer" class="info-text">P1</font></li>
+                                <li>Turn(s) : <font id="currentTurn" class="info-text">0</font></li>
+                            </ul>
+                        </div>
+                    </div>	
+                </div>
+                <div id="main-container-tests" class="hidden"></div>
+
+                <div id="save-form" class="modal-dialog" title="Save a New Graph">
+                    <span class="validateTips">If the graph with entered name already exist, there will be replaced by the new Graph.</span>
+
+                    <form>
+                        <fieldset>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all" />
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="load-form" class="modal-dialog" title="Load a Graph"></div>
+                <div id="help-modal" class="modal-dialog" title="Help - How to use HackenBush ?"></div>
+                <div id="mode-modal" class="modal-dialog" title="Choose your Mode !"></div>
+            </div>
+        </div>
+        <div id="main-bottom">
+            <div id="main-bottom-container">
+                <a href="#play"><div id="play" class="button-bottom">Play</div></a>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="./scripts/javascript/lib/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/lib/jquery-ui-1.8.18.custom.min.js"></script>
+
+        <script type="text/javascript" src="./scripts/javascript/Exception/Exception.js"></script>
+        <script type="text/javascript" src="./scripts/javascript//Exception/NodeException/NodeException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/NodeException/UnexistingNodeException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/NodeException/AlreadyExistingNodeException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/NodeException/InvalidIdException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/NodeException/AlreadyGroundedNodeException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/NodeException/NotConnectedToGroundException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/EdgeException/EdgeException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/EdgeException/AlreadyExistingEdgeException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/EdgeException/UnexistingEdgeException.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Exception/IndexException/InvalidIndexException.js"></script>
+
+        <script type="text/javascript" src="./scripts/javascript/Graph/Node.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Graph/Edge.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Graph/AbstractSimpleGraph.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Graph/AbstractHackenbushGraph.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Graph/SimpleGraph.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Graph/MultiGraph.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/Graph/HackenbushGraph.js"></script>
+        
+        
+        <script type="text/javascript" src="./scripts/javascript/interface/hackenbush.js"></script>
+        
+        <script type="text/javascript" src="./scripts/javascript/interface/controller/reloadPage.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/interface/view/page.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/interface/view/background.js"></script>   
+        <script type="text/javascript" src="./scripts/javascript/interface/view/drawingArea.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/interface/view/Point.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/interface/view/BezierCurve.js"></script>
+
+        <script type="text/javascript" src="./scripts/javascript/interface/modele/modele.js"></script>
+        
+        <script type="text/javascript" src="./scripts/javascript/AI/AbstractAIPlayer.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/AI/AIPlayer12.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/interface/controller/controller.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/interface/controller/listenToTools.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/interface/controller/listenToDrawingArea.js"></script>
+
+        <script type="text/javascript" src="./scripts/javascript/interface/controller/formChecks.js"></script>
+        <script type="text/javascript" src="./scripts/javascript/interface/view/modalDialog.js"></script>
+
+    </body>
+</html>

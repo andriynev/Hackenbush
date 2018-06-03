@@ -1,0 +1,8 @@
+#canvasArea {
+	cursor: crosshair;
+	top: 5px;
+	position: relative;
+	border: 5px solid rgba(255,0,0,0.5);
+    outline: 5px solid rgba(0,226,229,0.5);
+	z-index: 1;
+}

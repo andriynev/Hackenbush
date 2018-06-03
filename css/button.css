@@ -1,0 +1,198 @@
+.button, .button-bottom, .locked, .selected {
+    position: relative;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+}
+
+.mini-button {
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+}
+
+.options {
+    left: 68px;
+    line-height: 10px;
+    width: 150px;
+    height: 80px;
+    padding: 5px 0px 0px 5px;
+}
+
+.options, .informations  {
+    margin: 0px;
+    float: left;
+    clear: none;
+    text-align: left;
+}
+
+#p1{
+    padding-top: 10px;
+}
+
+.options, .button, .locked, .informations, .mini-button {
+    border-radius: 0.5em;
+}
+
+.button, .locked {
+    line-height: 107px;
+}
+
+.options, .button.toolChooser, .locked, .informations {
+    background-color: #f0f1f4;
+}
+
+.options, .button, .button-bottom, .locked, .selected, .informations, .mini-button, .winner {
+    border: 4px solid rgba(201,201,201,0.5);
+    box-shadow: 0 0 8px rgba(221,201,201,1);
+    font-family: Helvetica, Arial;
+    font-weight: 900;
+    font-variant:small-caps;
+}
+
+.options, .button, .button-bottom, .locked, .selected, .informations, .mini-button {
+    color: #d3bebe;
+}
+
+.button.toolChooser, #main-left .locked, #resetGame {
+    background-image: url(../ressources/images/toolChooser.png);
+}
+
+#save {
+    background-position:0px -7px;
+}
+
+#save:hover {
+    background-position:0px 63px;
+}
+
+#draw {
+    background-position:-140px -8px;
+}
+
+.no-lock #draw:hover {
+    background-position:-140px 60px;
+}
+
+#edit {
+    background-position:-68px -5px;
+}
+
+.no-lock #edit:hover {
+    background-position:-68px 60px;
+}
+
+#eraseAll {
+    background-position:-210px -10px;
+}
+
+.no-lock #eraseAll:hover {
+    background-position:-210px 56px;
+}
+
+#load {
+    background-position:-283px -7px;
+}
+
+.button#load:hover {
+    background-position:-283px 57px;
+}
+
+#erase {
+    background-position:-350px -10px;
+}
+
+.no-lock #erase:hover {
+    background-position:-350px 56px;
+}
+
+#resetGame {
+    background-position:-489px -5px;
+}
+
+#resetGame:hover {
+    background-position:-490px 57px;
+}
+
+#resetGame {
+	position: relative;
+	top: -280px;
+	border-radius: 2.5em;
+}
+
+.button-bottom, .selected {
+    background-image: url(../ressources/images/button-bottom.png);
+    background-position: -4px -4px;
+    background-repeat: no-repeat;
+    border-radius: 2em;
+    float: left;
+    clear: none;
+    line-height: 70px;
+    vertical-align: middle;
+}
+
+.selected, .locked {
+	cursor: not-allowed;
+}
+
+.button, .button-bottom  {
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+	cursor: pointer;
+}
+
+#main-left .toolChooser, #main-left .locked {
+    margin: 0px 5px 20px 0px;
+    float: right;
+    clear: both;
+}
+
+.button:hover, .button-bottom:hover, .selected, .no-lock .locked  {
+    border: 4px inset rgba(77,255,77,0.4);
+    color: rgba(77,255,77,0.6);
+}
+
+.button:hover {
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.button-bottom:hover {
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+.lock .locked {
+    color: rgba(255,0,0,0.4);
+    border: 4px solid rgba(255,0,0,0.2);
+    box-shadow: 0 0 8px rgba(255,0,0,0.2);
+}
+
+#main-right .colorChooser , #main-right .locked{
+    margin: 0px 5px 110px 0px;
+    top: 35px;
+}
+
+.red {
+    background-color: red;
+    color: red;
+}
+
+.green  {
+    background-color: green;
+    color: green;
+}
+
+.blue {
+    background-color: blue;
+    color: blue;
+}

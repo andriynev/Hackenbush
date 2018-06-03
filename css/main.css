@@ -1,0 +1,93 @@
+body {
+	background: #eee;
+	background-repeat:repeat-x repeat-y;
+	background-image:url(../ressources/images/bglines.png);
+}
+
+a {
+	text-decoration: none;
+}
+
+#head, #main, #main-container, #main-bottom, #foot {
+	width: 1200px;
+    background: none repeat scroll 0 0 padding-box white;
+    box-shadow: 0 0 8px rgba(255,255,255,1);
+}
+
+#head, #main, #main-container, #main-center, #main-left, #main-right, #main-bottom {
+	text-align: center;
+}
+
+#main, #main-bottom {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+#head, #foot {
+	height: auto;
+    border: 8px solid transparent;
+}
+
+#head, #foot, #main, #main-bottom {
+	margin:auto;
+}
+
+#head {
+	z-index: 1;
+    border-bottom: none;
+}
+
+#main-container {
+    margin: 0 auto;
+    border-top: 8px solid white;
+    border-bottom: 8px solid white;
+}
+
+#main-center, #main-left, #main-right {
+	display:table-cell;
+}
+
+#main-center {
+	width: 900px;
+}
+
+#main-left, #main-right {
+	width: 150px;
+}
+
+#main-bottom {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#main-bottom-container {
+	display: inline-block;
+}
+
+#main, #head, #main-bottom, #foot, #right-bottom {
+	position: relative;
+}
+
+#foot, #right-bottom {
+	text-align: right;
+}
+
+#foot {
+	color: #b19fa1;
+}
+
+.visible {
+	display: inherit;
+}
+
+.hidden, .lock .hideInPlay.locked, .lock .colorChooser.locked, .no-lock .hideInEdit.locked, .informations.hideInEdit.locked, .startbg.hideInEdit.locked, .options.hideInEdit.locked, .no-lock #resetGame{
+	display: none;
+}
+
+.square {
+	list-style-type:square;
+}
+
+.modal-dialog .square {
+	font-size: 15px;
+	line-height: 25px;
+}

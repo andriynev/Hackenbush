@@ -1,0 +1,84 @@
+.startbg {
+	background: url(../ressources/images/bg-start.jpg) no-repeat;
+	width: 800px;
+	height: 600px;
+	position: absolute;
+	top: 18px;
+	left: 200px;
+	opacity: 0.9;
+	z-index: 2;
+}
+
+.startbg .start {
+	background: url(../ressources/images/start.png) no-repeat;
+	background-position: 0px 0px;
+	width: 800px;
+	height: 108px;
+	position: relative;
+	top: 240px;
+	left: 0px;
+}
+
+.startbg .start:hover {
+	background-position: 0px -115px;
+	cursor: pointer;
+}
+
+.informations .square{
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.info-text {
+	color: #ff8585;
+}
+
+.informations{
+    position: absolute;
+	top: 200px;
+	left: 1013px;
+    width: 170px;
+    height: 170px;
+}
+
+.informations ul {
+    padding-left: 15px;
+}
+
+.winner {
+	position: absolute;
+	top: 18px;
+	left: 200px;
+	width: 800px;
+	height: 600px;
+	line-height: 565px;
+	text-align: center;
+	font-size: 42px;
+	z-index: 2;
+}
+
+.inIa .redBlueGraph, .inIa .notIAGraph {
+	background-color: red;
+}
+
+.winCanvas {
+	z-index:-1;
+	position:absolute;
+	left:-4px;
+	top:-4px;
+}
+
+.playerWins {
+	left: 20px;
+	top: 250px;
+}
+
+.iaWins {
+	opacity: 0.85;
+}
+
+.iconClose {
+	left: 770px;
+	top: 5px;
+	position: absolute;
+}

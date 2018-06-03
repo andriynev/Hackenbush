@@ -1,0 +1,17 @@
+/* src : http://line25.com/tutorials/how-to-create-a-cool-anaglyphic-text-effect-with-css */
+h1 {
+	display: inline;
+	position: relative;
+	font: 200px Helvetica, Sans-Serif;
+	letter-spacing: -5px;
+	color: rgba(0,226,229,0.5); 
+}
+
+h2 {
+	display: inline;
+	position: relative;
+	font: 30px Helvetica, Sans-Serif;
+	letter-spacing: -5px;
+	color: rgba(0,226,229,0.5);
+}
+
